@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>Images\logo.ico</ApplicationIcon>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove="CheapoDB.db"/>
+        <None Remove="delete.png"/>
+        <None Remove="Images\download.png"/>
+        <None Remove="Images\upload.png"/>
+        <None Remove="logo.ico"/>
+        <Content Include="CheapoDB.db">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="AppSetting.json"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Dapper" Version="2.0.90"/>
+        <PackageReference Include="System.Data.SQLite.Core" Version="1.0.114.2"/>
+        <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="Images\delete.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Images\download.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Images\logo.ico">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+        <Resource Include="Images\upload.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Resource>
+    </ItemGroup>
+
+</Project>
